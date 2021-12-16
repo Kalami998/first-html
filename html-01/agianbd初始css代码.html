@@ -1,0 +1,43 @@
+/* 设置与顶端的间隔 */
+#top{line-height: 30px;}
+/* 设置导航栏属性 */
+.navgation{line-height:30px;position:relative;right: 0;float:right} 
+/* 设置a标签未被点击时的属性 */
+/* .navgation a:link{color: black} */
+/* 语句顺序不一样，颜色显示不一样；若鼠标经过放在visited前，就不会显示鼠标经过的颜色 */
+.mnav{margin-right: 20px;font-weight: 600;}
+.lb{margin-right: 20px;}
+.navgation :hover{color:blue;}
+.mnav :visited{color: black}
+.pf{margin-right: 20px;}
+/* 下面设置三角符号，border-top设置三角简朝向相反 */
+.sanjiao::after{content:"";display: inline-block;width: 0px;height: 0px;border: 4px solid transparent;border-top: 4px solid rgb(141, 141, 156);position: relative;top:1px;}
+/* 同时选中多个标签：.navgation a,span:hover{}*/
+.bri{margin-right:10px;text-decoration-line: none;color:#fff;background-color: #38f;font-size: 18px;text-align: center}
+.pf_ul{margin-left: 90%;margin-top:30px;height: 100px;width: 70px;text-align: center;line-height: 25px;position: relative;display: none;border-radius: 3px;box-shadow: 0px 0px 2px rgb(48, 45, 45);position: absolute;}
+.pf_ul a{color: black;text-decoration: none;}
+.pf_ul a:hover{background-color: rgba(74, 74, 228, 0.8);color: white;}
+/* top:0与left:0和position中的fixed或absoluted搭配使用能实现置顶 */
+#sousuo {background-color: #fafafa;top:0;left:0;position:fixed;z-index: 100;border-bottom: 1px solid #eee;width: 100%;min-width: 960px;height:455px;font-size: 13px;overflow: hidden;display: none}
+#gengduo{width: 85px;height: 100%;border-left: 1px solid #c2b4b4;position: absolute;background-color: #f9f9f9;overflow:hidden;z-index: 2;right: 0;top: 0;text-align: center;display: none}
+#gengduo a{line-height: 40px;text-decoration-line: none;font-size: 14px}
+#gengduo a:hover{text-decoration-line: underline}
+#tiao {width:100px;height: 2px;background-color: blue;margin-left:9px}
+#xian{width: 100%;height: 1px;background: rgb(90, 83, 83)}
+/* 使所有的th标签按右对齐排列 */
+#sousuo1_ tr{line-height: 50px;}
+#sousuo1_ th{color: rgb(23, 23, 24);text-align: right;width:400px}
+#sousuo1_ td{text-align: left;}
+#sousuo2_ tr{line-height: 40px}
+#sousuo2_ th{text-align: right;width: 400px}
+#sousuo2_ tr button{text-align: center}
+#content_shuru {margin-left: 25%;height:40px;}
+.input1{width: 700px;height: 40px;font-size: 20px;text-indent: 2em;border: 1}
+.input2{width: 100px;height: 40px;border:none;font-size: 20px;position:absolute;background-color:rgb(76, 101, 240);color: white;}
+#erweima{text-align: center;margin-top: 15%}
+#mingzi {text-align: center;}
+/* 设置被访问过后的颜色 */
+
+@media only screen and(min-width:600){
+    .navgation{background-color: blue}
+}

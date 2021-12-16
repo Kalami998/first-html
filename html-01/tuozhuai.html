@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src='http://libs.baidu.com/jquery/1.7.2/jquery.min.js'></script>
+<script src="http://libs.baidu.com/jqueryui/1.9.0/jquery-ui.min.js"></script>
+<style>
+#draggable { width: 150px; height: 150px; padding: 0.5em; border:#AAA 1px solid; background-color:#EEE; }
+</style>
+</head>
+<body>
+<div id="draggable">求拖走</div>
+<script>
+$(function() {
+    $( "#draggable" ).draggable({draggable:false});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="weibotupian/icon.jpg">
+    <title>随时随地,发现新鲜事</title>
+    <link rel="stylesheet" href="weibocss.css">
+    <script>
+        // 建立一个时间刷新函数
+        function timing() {
+
+            var b = new Date();
+            var c = b.getHours();
+            var d = b.getMinutes();
+            function checkcheck(mouse) {
+                if (mouse < 10) {
+                    mouse = "0" + mouse;
+                };
+                return mouse;
+
+            };
+            c = checkcheck(c);
+            d = checkcheck(d);
+            document.getElementById("timer").innerHTML = c + ":" + d
+            setTimeout('timing()', 500);
+        }
+    </script>
+</head>
+
+<body onload="timing()">
+    <!-- onload 属性在对象已加载时触发。onload 常用在 <body> 中，一旦完全加载所有内容（包括图像、脚本文件、CSS 文件等），就执行一段脚本。在这里onload没有就无法动态刷新时间函数 -->
+    <div class="daohanglanCnt">
+        <div id="timer"></div>
+        <a href="https://m.weibo.cn/search?containerid=231583">
+            <div id="search">
+                <div id="bianli">大家正在搜:库里中国行</div>
+            </div>
+        </a>
+    </div>
+</body>
+<script>
+    (function () {
+        // 数组是[]分隔符是，,对象类型是{}分隔符为;（类似于python中的字典 其中为一一对应的键值对）
+        var things = [
+            "大家正在搜: 费德勒 德约科维奇",
+            "大家正在搜: RNG vs IG",
+            "大家正在搜: 上海地铁",
+            "大家正在搜: 极限挑战",
+            "大家正在搜: 天宫二号要退休了",
+        ]
+        var a = document.getElementById("bianli");
+        var i = 2500;
+        var curIndex = 0
+        setInterval(lunbo, i);
+        function lunbo() {
+            if (curIndex == things.length - 1) {
+                curIndex = 0;
+            } else {
+                curIndex += 1;
+            }
+            a.innerHTML = things[curIndex];
+        }
+    })();
+</script>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="百度，度娘">
+        <!-- name指定名称,content是其内容 -->
+        <meta name="description" content="全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。百度超过千亿的中文网页数据库，可以瞬间找到相关的搜索结果。">  
+        <title>百度一下，你就知道</title>
+        <link rel="icon" href="baidtb_wps图片.ico">
+        <style type="text/css">
+            *{margin: 0;padding: 0;cursor:pointer;font-family: "microsfot yahei";}
+            /* input::-webkit-input-placeholder{color: white}
+            input::-moz-placeholder{color: white}
+            input::-moz-placeholder{color: white}
+            input:-ms-input-placeholder{color: white} */
+            /* 为做导航条样式，清除吗，margin和padding */
+            .navigation{height: 60px;width: 100%;font-size: 25px; }
+            /* float 浮动标签 浮动块级元素达到俩个div标签早同一行的效果 */
+            #leftnav li{float:left; list-style-type: none}  
+            #leftnav a{text-decoration-line: none;color: black}
+            /* 利用属性text-decoration-line: none消除连接下的下划线  */
+            /* disc是圆盘的意思,用于清除无序列表前面的原点 ,注意直接#leftnav {float:left; list-style-type: none}是无法消除li标签前的原点 必须带上li标签,但如果只要li标签不会有左右蓝的效果*/
+            #rightnav li{float: right; list-style-type: none;text-decoration-line: none; }
+            #rightnav a{text-decoration-line: none;color: black}
+
+            /* block显示为块元素 */
+            #right1 li:hover ul{display: block} 
+            /* 设置鼠标经过right1下的li中的设置标签显示其下拉菜单ul */
+            #right1 #two li:hover{background-color: #3385ff }
+            #two  {width: auto;height: 120px;line-height: 30px;display: none;}
+            /* 注意设置边框最好好好查阅一下资料 */
+            /* margin-top指对象距离块级顶部的距离 */
+            #two li{text-align: center;font-size:18px}
+            #bt-1{font-size: 30px;border: none;margin-right: auto;background-color:  #3385ff }
+            #three{display: none;height: 400px;width: auto;background-color:wheat}
+            #three li:hover{background-color:tomato}
+            #three li{float: inherit;line-height: 50px;}
+            #three li a{text-decoration-line:underline}
+
+            .content_baidulogo{margin-left: 41%;}
+            #content_shuru {margin-left: 32%;height:60px;}
+            .input1{width: 950px;height: 60px;font-size: 20px;text-indent: 2em;border: 1}
+            .input2{width: 130px;height: 60px;border:none;font-size: 20px;position:absolute;background-color:rgb(76, 101, 240);color: white;}
+             
+            #image1{margin-left: 35%;height:600px;width:700px;border-style: solid;border-width: 2px;} 
+            #img2{margin-left: 42%}
+        </style>
+        <script>
+             
+            
+             function timing()
+             {
+                //  调用getfullyear()等函数获取值并赋予前面的变量
+                 var day=new Date();
+                 var a=day.getFullYear();
+                 var b=day.getMonth();
+                 var c=day.getDate();
+                 var d=day.getHours();
+                 var e=day.getMinutes();
+                 b=b+1;
+                //  调用checkcheck函数,变量都变成了字符串
+                 b=checkcheck(b);
+                 c=checkcheck(c);
+                 d=checkcheck(d);
+                 e=checkcheck(e);
+                 function checkcheck(g){
+                     if (g<10)
+                     {g="0"+g;}
+                     return g   ;
+                 }
+                 document.getElementById("time1").innerHTML="nowTime:"+" "+d+":"+e+","+a+"/"+b+"/"+c;
+                //  下面是设置时间刷新：调用setimeout函数对timing()进行每500毫秒一次的刷新
+                 setTimeout('timing()',500)
+             }
+           
+            //  var f=document.getElementById("image1"); 为什么放这里不行，放结尾就能实现
+            //  var g=document.getElementById("img2");
+            //  var h=1
+            //  g.onclick=function(){
+            //      if(h=1){
+            //          h++;
+            //          f.src=h+".jpg";
+            //      }
+            //      else{
+            //          h=1;
+            //          f.src=h+".jpg"
+            //      }
+            //  }
+            // </script>
+           
+    </head>
+    <body onload="timing()">
+        <div  id="time1" style="margin-left:20px;color: brown;margin-top: 20px"></div>
+        <br>
+        <div class="navigation" style="text-align:center;">
+            <!-- 定义导航栏 -->
+            <div id="leftnav">
+                <ul>
+                    <li> &nbsp;&nbsp;&nbsp;<a href="http://v.baidu.com/" target="_self"  title="视频">视频</a></li>
+                    <li> &nbsp;&nbsp;&nbsp;<a href="https://tieba.baidu.com" target="_self" title="贴吧">贴吧</a></li>
+                    <li> &nbsp;&nbsp;&nbsp;<a href="https://wenku.baidu.com/" title="文库">文库</a></li>
+                </ul>
+            </div>
+            <div id="rightnav">
+                <ul id="right1">
+                    <li> &nbsp;&nbsp;&nbsp;<button id="bt-1">更多产品<span></span><ul id="three"><li><a href="https://www.nuomi.com/" target="_self"><img src="timg.jpg" style="width:40px;margin-top: 30px;height: 40px;"  title="百度糯米" alt="糯米logo"></a></li><li><a href="http://music.taihe.com/">音乐</a></li><li>图片</li></ul></button></li>
+                    <li> &nbsp;&nbsp;&nbsp;<a href="#" onclick="onclickfunction"> 设置 </a><span></span><ul id="two"><li>搜索设置</li><br><li>高级搜索</li><br><li>关闭预测</li><br><li>隐私设置</li></ul></li>
+                    <!-- 坐等插入一个三角符号 -->
+                    <li> &nbsp;&nbsp;&nbsp;<a href="#" id="bt">登陆</a></li>
+                    <li> &nbsp;&nbsp;&nbsp;<a href="http://map.baidu.com/" target="_blank" title="地图">地图</a></li>
+                    <li> &nbsp;&nbsp;&nbsp;<a href="http://news.baidu.com/" target="_blank" title="新闻">新闻</a></li>
+                    <li> &nbsp;&nbsp;&nbsp;<a href="http://xueshu.baidu.com/" target="_self" title="学术">学术</a></li>
+                    <li> &nbsp;&nbsp;&nbsp;<a href="https://www.hao123.com/" title="hao123">hao123</a></li>
+                </ul>
+            </div>
+        </div>
+            <!-- <nobr>不换行标签</nobr> -->
+            <br>
+            <br> 
+            <div class="content_baidulogo">
+               <a href="https://baike.baidu.com/" target="_self"> <img src="bd_logo1.png" alt="百度logo" title="到百度百科" width="580" height="280"></a> 
+            </div>
+            <div>
+                <!-- 当form标签外有fiedset标签时，对中会有问题 -->
+                    <form action="1.php" method="get" id="content_shuru">
+                        <input class="input1" type="search" autofocus placeholder="搜索或输入网址" maxlength="77" autocomplete="off">
+                        <input class="input2" type="submit"  title="点击去搜索" value="百度一下">
+                    </form>    
+            </div>  
+            <br>
+            <br>
+            <div id="images">
+                <img  id="image1" src="1.jpg"  >
+            </div>
+            <br>
+            <br>
+            <input id="img2" type="button" value="下一张" >
+            <br>
+            <br>
+            <br>
+            <div style="text-align:center;color:red;font-size: smaller;" ><a href="https://www.baidu.com/cache/sethelp/help.html" target="_blank">把百度设为主页</a> <a href="http://e.baidu.com/" target="_blank">百度推广</a> <a href="http://home.baidu.com/" target="_blank">关于百度</a></div>
+            <br>
+            <div style="text-align:center;font-size: 5;color: rgba(70, 67, 67, 0.432)"> @2019 使用百度前必读 意见反馈 京ICP030173号 京公网安备11000002000001号 </div>
+    </body>
+    <script> 
+            // 点击切换图片
+            var f=document.getElementById("image1");
+            var g=document.getElementById("img2");
+            var h=1
+             g.onclick=function(){
+                 if(h<3){
+                     h++;
+                     f.src=h+".jpg";
+                 }
+                 else{
+                     h=1;
+                     f.src=h+".jpg"
+                 }
+             }
+            </script>
+    </script>
+</html>

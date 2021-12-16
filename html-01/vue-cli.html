@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 当 v-if 与 v-for 一起使用时，v-for 具有比 v-if 更高的优先级 -->
+    <div id = "lpl">
+        <p v-for="item in items">
+            {{item.message}}
+        </p>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var avm = new Vue ({
+        el: '#lpl',
+        data : {
+            items : [
+                {message : 'est'},
+                {message : 'rng'},
+                {message : 'fpx'}
+            ]
+        }
+    })
+</script>
+</html>

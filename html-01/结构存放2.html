@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+
+    <body>
+        <input type='file' accept='text/plain' onchange='openFile(event)'><br>
+        <!-- <div id="input"></div> -->
+        <div id="output"></div>
+    </body>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var dataList = [];
+        var resultList = [];
+
+        var returnData = function(list) {
+            if (list.length > 0) {
+                resultList = [];
+                for (var i = 0;i<list.length;i++) {
+                    var mercator={x:0,y:0};
+                    var lonlat = {
+                        x: Number(list[i].split(',')[0]),
+                        y: Number(list[i].split(',')[1]),
+                        z: list[i].split(',')[2] ? list[i].split(',')[2] : '',
+                        true: list[i].split(',')[3] ? list[i].split(',')[3] : ''
+                    };
+                    var x = lonlat.x *20037508.34/180;
+                    var y = Math.log(Math.tan((90+lonlat.y)*Math.PI/360))/(Math.PI/180);
+                    y = y *20037508.34/180;
+                    z = Number(lonlat.z);
+                    b = lonlat.true;                  
+                    var resultOne = x + ',' + y + ',' + z + ',' + b
+                    resultList.push(resultOne); 
+                    if (i == list.length - 1) {
+                        console.log('resultList',resultList);
+                        $("#output").html(resultList.join('</br>'));
+                    }
+                }
+            } else {
+                console.log('文件数据不存在!');
+            }
+
+        }
+
+        var openFile = function(event) {
+            var input = event.target;
+            var reader = new FileReader();
+            console.log('读取文件',reader);
+            reader.onload = function() {
+                if(reader.result) {
+                    //显示文件内容
+                    $("#input").html(reader.result);
+                    dataList = reader.result.split('\r\n'); //通过换行符转换成数组格式
+                    console.log(dataList);
+                    // console.log(typeof(dataList));
+                    returnData(dataList);
+                }
+            };
+            reader.readAsText(input.files[0]);
+        };
+
+    </script>
+
+</html>
+

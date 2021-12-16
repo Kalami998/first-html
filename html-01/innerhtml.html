@@ -1,0 +1,25 @@
+<!-- innerhtml属性:用于获取对象的内容或者向对象插入内容 -->
+<!doctype html>
+<head>
+   <script>
+       function myfunction(){
+           alert(document.getElementById("p1").innerHTML);
+           
+           
+       }
+       function myfunction2(){
+           document.getElementById("p2").innerHTML="<strong>设置内容</strong>";//这里的strong标签是起到作用的
+       }
+   </script>
+   
+</head>
+
+<body>
+    <p id="p1"> 真棒 </p>
+    <p id="p2"></p>
+    <!-- 获取p1的内容并用于alert输出框中显示 -->
+    <input type="button" style="zoom: 1;" onclick="myfunction()" value="点这里"></div>
+    <!-- 点击想p2代指的标签输入指定内容 -->
+    <input type="button" onclick="myfunction2()" value="向对象设置指定内容"> 
+
+</body>

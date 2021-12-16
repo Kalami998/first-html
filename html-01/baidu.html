@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title >百度一下，你就知道</title>
+        <link rel="icon" href="baidtb_wps图片.ico">
+        <style type="text/css">
+            a,dd{color: dimgrey}
+        </style>
+    </head>
+    <body>
+        <div style="text-align: right;cursor:pointer"><a  href="http://news.baidu.com/" a target="_blank">新闻</a> <a  href="https://map.baidu.com/" a target="_blank">地图</a> <a target="_blank" href="https://passport.baidu.com/v2/">登陆</a> <a target="_blank" href="https://www.hao123.com/">hao123</a></div>
+        <br>
+        <br>
+        <a href="https://baike.baidu.com/" target="_self" title="到百度百科去" ><p style="text-align: center;"><img src="54.gif"  ></p></a>
+        <div style="text-align: center;"><input style="width: 400px;height: 40px;font-size: medium" type="search"  autofocus maxlength="50"  placeholder="寻你所需，找你所要" autocomplete="off"> <input type="submit" style="width:  80px;height: 40px;" value="百度一下"></div> 
+        <br>
+        <!-- <div style="text-align:center;"> -->
+        <table style="font-size: 10px；" border="0" height="40" width="600" align="center" cellspacing="0">
+            <tr align="center">
+                    <td width="60"><a href="https://tieba.baidu.com/" target="_self">贴吧</a></td>
+                    <td width="60"><a href="http://image.baidu.com/" target="_self">图片</a></td>
+                    <td width="60"><a href="https://y.qq.com/" target="_self">音乐</a></td>
+                    <td colspan="4"></td>
+                    <!-- <td></td>
+                    <td></td>
+                    <td></td> -->
+                    <td width="60" ><a>设置</a></td>
+                    <!-- <td width="60" align="right">设置</td> -->
+            </tr>
+        </table>
+        <table style="font-size: 20px;color: rgb(223, 48, 48);" border="1" height="300" width="600" align="center" cellspacing="0">
+            <tr > 
+                <td> 
+                    <span align="center"><h5>实时热点</h5></span>
+                <ul>
+                    <li>春城晚报-开屏新闻记者5月3日从云南丽江玉龙雪山景区证实，3日上午，丽江玉龙雪山区域出现疑似局部山体崩塌</li>
+                    <li>新中国成立70周年以来取得的伟大成就·····</li>
+                    <li>隐形战争！美军距离莫斯科太近了，乌克兰在俄罗斯心头插了一刀</li>
+                    <li>Msi季中赛，俄罗斯老弟爆炸Carry····</li>
+                </ul>
+            </td>
+            </tr>
+           
+        </table>
+        <!-- </div>   -->
+        <!-- <span>
+            <div style="display:inline-block;position:relative">推荐</div>
+        </span> --> 
+        <br>
+        <br>
+        <br>
+         <!-- <span align="center"><dl><dd>把百度设为主页</dd></dl><dl><dd>百度推广</dd></dl><dl><dd>关于百度</dd></dl></span> -->
+       <div style="text-align:center;color:red;font-size: smaller;" ><a href="https://www.baidu.com/cache/sethelp/help.html" target="_blank">把百度设为主页</a> <a href="http://e.baidu.com/" target="_blank">百度推广</a> <a href="http://home.baidu.com/" target="_blank">关于百度</a></div>
+       <br>
+       <div style="text-align:center;font-size: 5;color: rgba(70, 67, 67, 0.432)"> @2019 使用百度前必读 意见反馈 京ICP030173号 京公网安备11000002000001号 </div>
+       
+<body>
+                <div >
+                                <img style="height: 500px;width: 600px;text-align: center;border-width: 2px;border-style: solid;" src="1.jpg" id="img1">
+                                <!-- <img src="logo.jpg" id="img2" >
+                                <img src="timg.jpg" id="img3"> -->
+                                
+                        </div>
+</body>
+<input id="img2" type="button" value="下一张" >
+<!-- <input id="img2" type="button" value="上一张"> -->
+<script>
+        var a=document.getElementById("img1");
+        var b=document.getElementById("img2");
+        var c=document.getElementById("img3");
+        var bool=true;
+        var h=1
+        b.onclick=function(){
+             if(h<3){
+                 h++;
+                 a.src=h+".jpg";
+             }
+             else {
+                     h=1;
+                     a.src=h+".jpg"
+             }
+        }
+        // c.onclick=function(){
+        //         if()
+        // }
+
+</script>
+    
+    </body>
+
+</html> 

@@ -1,0 +1,204 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html{font-size: 20px}
+      #yu{width: 100%;height: 500px;;background-color: brown}
+      #yu3{width: 40rem;background-color: blue}
+     </style>
+  </head>
+  <body style="height:100%;width:100%">
+       <div id="yu">宽1536</div>;
+       <div id="yu3">长701</div>;
+
+  </body>
+  <script>
+    var a=document.body.clientHeight;
+    var b=document.body.clientWidth;
+    var c="some string";
+    (function(){
+        alert("a"); //输出字符串a
+        alert(a); //输出a所代表的值或量
+        alert(b);
+    })();
+    var d=c.substring(2);
+    alert(c);
+    alert(d);
+    alert(d[0])
+  </script>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title></title>
+  </head>
+  <body>
+      <div id="app">
+          {{ message }}
+      </div>
+      <div id="app2">
+          <span v-blind:style=" {color:activeColor;} ">
+              Hover your mouse over me for a few seconds to my dynamically bound title!
+          </span>
+      </div>
+      <div id="app3">
+        <p v-if="seen">Now you see me</p>
+      </div>
+      <!--  为p标签指定id名后,其内的子标签也可以使用vue中属性的值，这里v-if使用的是vue中的if判断方法 -->
+      <div id="app4">
+        <p v-blind:style="{color:activeColor;}">sdsd</p>
+      </div>
+      <div id="app-4">
+          <ol>
+            <li v-for="todo in todos">
+              {{ todo.text }}
+            </li>
+          </ol>
+      </div>
+      <div id="app-5">
+          <p>{{ message }}</p>
+          <button v-on:click="reverseMessage">Reverse Message</button>
+          <!-- {{message}}调用的是Vue实例中data的message属性的值,v-on:click代表的是点击或不点击，reverseMessage代表的是Vue实例中的方法 -->
+      </div>
+      <div id="app-6">
+          <p>Heights tall</p>
+          <input v-model="message">
+          <!-- 调用input输入框，并且利用v-model在框内显示message的值 -->
+      </div>
+      <ul>
+        <todo-item></todo-item>
+      </ul>
+      <div id="app-7">
+          <ol>
+            <todo-item v-for="item in grocerylist" v-bind:todo="item"></todo-item>
+          </ol>
+      </div>
+      <div class="app8">
+        <p v-once>this wil never be change:{{message | capitalize }}</p> 
+        <!-- v-once指令使该属性不能更改 -->
+        <span v-html>{{rawHtml}}</span> 
+        <!-- v-html用于输出真正的html代码, -->
+      </div>
+  </body>
+  <script src="vue.js"></script> 
+  <!-- 外联式js文件的script标签不能在内联js代码，若需要内联js代码则需要在写一个script标签使用 -->
+  <script>
+    //有时创建一个vue实例重新写script一个标签才能实现其vue方法。
+      var avm = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue!'
+        }
+      // 声明的Vue实例可以在浏览器控制台更改其属性 如更改avm的messa属性:  avm.message = "This is a nice day for hzm,because he is  alive"
+      });
+      
+  //     var app2 = new Vue({
+  //       el:'#app2',
+  //       data :{
+  //       message1 : 'You loaded this page on ' + new Date(),
+  //       length : 22,
+  //       activeColor :red,
+  //       }
+  //       // 实例名.属性 = 值 ,el与data一定不能少
+  //     });
+
+      var app3 = new Vue({
+          el:'#app3',
+          data :{
+            seen : true
+          }
+      });
+      var app4=new vue({
+        el : "#app4",
+        data : {
+          activeColor:red,
+        }
+      })
+    </script>
+    <script>
+      var app4 = new Vue({
+      el: '#app-4',
+      data: {
+      todos: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ]
+  }
+})
+// 在控制台里，输入 app4.todos.push({ text: 'New item' })。你会发现列表中多了一栏新内容。,注意要加单引号
+  </script>
+  <script>
+    var app5=new Vue({
+      el: '#app-5',
+      data : {
+        message : 'Hello Vue.js'
+      },
+      methods : {
+        reverseMessage: function(){
+          this.message = this.message.split('').reverse().join('')
+          // 倒过来输出message的值
+        }
+      }
+    });
+  </script>
+  <script>
+      var app6 = new Vue({
+      el: '#app-6',
+      data: {
+      message: 'Hello Vue!'
+  }
+})
+  </script>
+  <script>
+    // 这只是一个假设的例子，但是我们已经将应用分割成了两个更小的单元，子元素通过 props 接口实现了与父亲元素很好的解耦。我们现在可以在不影响到父应用的基础上，进一步为我们的 todo 组件改进更多复杂的模板和逻辑。
+      Vue.component('todo-item',{
+        props:['todo'],
+        template: '<li>{{todo.text}}</li>'
+      })
+      var app7 = new Vue({
+        el: '#app-7',
+        data: {
+          grocerylist:[
+            { text: 'vegetables'},
+            { text: 'cheese'},
+            { text: 'whatever else humans are supposed to eat'}
+          ]
+        }
+      })
+
+      var MyComponent = Vue.extend({
+      // 扩展选项
+     })
+      // 所有的 `MyComponent` 实例都将以预定义的扩展选项被创建
+     var myComponentInstance = new MyComponent()
+  </script>
+  <!-- <div id="app">
+  <app-nav></app-nav>
+  <app-view>
+    <app-sidebar></app-sidebar>
+    <app-content></app-content>
+  </app-view>
+</div>组件样式 -->
+   <script>
+       var vm = new Vue({
+         el : '.app8',
+         data : {
+           message : 'everything will be ok!',
+           rawHtml : '<p style="family-size:223px"></p>'
+         },
+         filers : {
+          //  过滤器 过滤器可以串联且可以接收参数
+           capitalize : function(value){
+             if(!value) return ''
+             value = value.tostring()
+             return value.charAt(0).toUppercase()+value.slice(1)
+            
+           }
+         }
+       })
+   </script>
+</html>
+

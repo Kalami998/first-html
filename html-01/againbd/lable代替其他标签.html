@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .upload {
+            display: none;
+            opacity: 0;
+        }
+        .img-box {
+            width: 6rem;
+            height: 6rem;
+            border: 1px dashed;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lessfont{
+            font-size: 0.16rem;
+            font-weight: normal;
+            font-family:PingFangSC-Regular,PingFangSC;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <input id="oio" class="upload" type="file" accept="image/*">
+    <div class="img-box">
+        <label for="oio" class="lessfont">
+            <img  src="zhidao.png" alt="">
+            <span>添加图片</span>
+        </label>
+    </div>
+</body>
+</html>

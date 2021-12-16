@@ -1,0 +1,30 @@
+* {padding:0;
+    margin:0;
+    font-family: "Microsoft yahei";
+    cursor: pointer;
+    font-size: 16px;
+}
+.daohanglanCnt {
+    margin-top: 0.5rem;
+}
+.daohanglanCnt a,.daohanglanCnt a:visited{
+    text-decoration: none;
+    color: #494949;
+}
+#timer {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 0.8rem
+}
+#search {
+    background-color: #b6b6b6;
+    height: 2rem;
+    width: auto;
+    border-radius: 3px;
+    margin: 0 0.8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}

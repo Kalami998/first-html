@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id='isUl'>
+            <li id='li01'>第1个</li>
+            <li id='li02'>第2个</li>
+            <li id='li03'>第3个</li>
+        </ul>        
+    </body>
+    <script>
+        function click01() {
+            alert('你点击了第1个li');
+        }
+        function click02() {
+            alert('你点击了第2个li');
+        }
+        function click03() {
+            alert('你点击了第3个li');
+        }
+        //事件监听
+        document.getElementById('isUl').addEventListener('click',function(event) {
+            var srcID = event.target.id;
+            if (srcID == 'li01') {
+                click01()
+            } else if (srcID == 'li02') {
+                click02()
+            } else if(srcID == 'li03') {
+                click03()
+            }
+        })
+    </script>
+</html>

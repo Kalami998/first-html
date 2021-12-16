@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='sds'>
+        <p v-if="seen">{{message}}</p>
+        <p>{{mess}}</p>
+        <button v-on:click="dothis">Reverse Message</button>
+    </div>
+    <div id="demo">
+        {{fullname}}
+        <!-- {{nullname}} -->
+    </div>
+    <!-- <div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div> 
+这样写只会渲染数组中最后一个被浏览器支持的值。在本例中，如果浏览器支持不带浏览器前缀的 flexbox，那么就只会渲染 display: flex -->
+    <div id="exampleOfWatch">
+        <p>
+            Ask a yes/no question:
+            <input v-model="question">
+        </p>
+        <p>{{answer}}</p>
+    </div>
+    <div id = "Oops" v-blind:class = "classObject">
+    </div>
+    <div id = "app8" v-if="ssk">
+        <p>今天天气真好</p>
+        <div  v-else>
+                <p>不要乱来</p>
+            </div>
+            <div v-else-if>
+                <p>的撒旦啦</p>
+            </div>
+    </div>
+    <!-- <div  v-else>
+        <p>不要乱来</p>
+    </div>
+    <div v-else-if>
+        <p>的撒旦啦</p>
+    </div> -->
+    <script src="vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    <script>
+        var avm = new Vue({
+            el: '#sds',
+            data: {
+                seen: true,
+                message: 'I found myself',
+                mess: 'hello word',
+            },
+            methods: {
+                dothis: function () {
+                    // this.mess = this.mess.split('').reverse().join('');
+                    this.mess = this.mess.split('').reverse().join('');
+                }
+
+
+            }
+        });
+
+    </script>
+    <script>
+        var vm = new Vue({
+            el: '#demo',
+            data: {
+                firstname: 'huang',
+                lastname: 'zemin',
+                nullname: 'huang zemin'
+            },
+            // 观察属性:用来监测和响应实例上的数据波动 它监控的变量当然必须在data里面声明才可以，它可以监控一个变量，也可以是一个对象
+            // watch一般用于监控路由、input输入框的值特殊处理等等，它比较适合的场景是一个数据影响多个数据
+            // watch: {
+            //     firstname: function(val){
+            //         this.nullname = val + ' '+this.lastname
+            //     },
+            //     lastname: function(val){
+            //         this.nullname = this.firstname+' '+val
+            //     }
+            // },
+            // watch/computed/methods可以输出相同的结果下·
+            computed: {
+                // getter属性 computed用来监控自己定义的变量，该变量不在data里面声明，直接在computed里面定义
+                fullname: {
+                    //使用getter属性
+                    get: function () {
+                        return this.firstname + ' ' + this.lastname;
+                    },
+                    // 使用setter属性
+                    set: function (newvalue) {
+                        var names = newvalue.split(' ');
+                        this.firstname = names[0];
+                        this.lastname = names[names.length - 1];
+                    }
+                }
+            }
+
+
+        })
+    </script>
+    <script>
+        var exampleOfWatch = new Vue({
+            el: '#exampleOfWatch',
+            data: {
+                question: '',
+                answer: 'I cannot give you an answer until you ask a question!'
+            },
+            watch: {
+                // 如果question改变函数就会运行
+                question: function (newq, oldq) {
+                    this.answer = 'Waiting for you to stop typing...'
+                    this.debouncedGetAnswer()
+                }
+            },
+            // 创造属性 创造一个函数
+            created: function () {
+                // `_.debounce` 是一个通过 Lodash 限制操作频率的函数。
+                // 在这个例子中，我们希望限制访问 yesno.wtf/api 的频率
+                // AJAX 请求直到用户输入完毕才会发出。想要了解更多关于
+                // `_.debounce` 函数 (及其近亲 `_.throttle`) 的知识，
+                // 请参考：https://lodash.com/docs#debounce
+                this.debouncedGetAnswer = _.debounce(this.answer, 500)
+            },
+            methods: {
+                getAnswer: function () {
+
+                    if (this.question.indexOf('?') === -1) {
+                        this.answer = 'Questions usually contain a question mark. ;-)'
+                        return
+                    }
+                    this.answer = 'Thinking...'
+                    var vm = this
+                    axios.get('https://yesno.wtf/api')
+                        .then(function (response) {
+                            vm.answer = _.capitalize(response.data.answer)
+                        })
+                        .catch(function (error) {
+                            vm.answer = 'Error! Could not reach the API. ' + error
+                        })
+                }
+            }
+        
+        })
+    </script>
+    <script>
+        var vma = new Vue({
+            el : '#Oops',
+            data :{
+                classObject : {
+                    active : true,
+                    'text-danger' : false
+                }
+            }
+        })
+    </script>
+    <script>
+        var app8 = new Vue ({
+            el : '#app8',
+            data : {
+                ssk : true,
+            }
+        })
+    </script>
+
+</html>

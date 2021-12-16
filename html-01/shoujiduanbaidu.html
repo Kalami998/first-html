@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0，maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi=device-dpi">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <style type="text/css">
+           html{font-size: 25px}
+           /* margin:0与padding：0解决了浏览器自带的margin：8px属性 */
+           *{margin: 0;padding: 0;font-family: "Microsoft Yahei";cursor:pointer;}
+           #navagation{width: 100%;height: 1.5rem;margin-top: 0.5rem;}
+           #png1{position: relative;margin-left: 0.2rem;vertical-align: sub;}
+           #png2{position: absolute;right: 3.2rem;vertical-align: middle;}
+           #png3{position: absolute;right: 0.8rem;margin-top: 0.15rem}
+           #logo{width: 6rem;height: 2.14rem;}
+           #tupianlan{width: 100%;text-align: center;margin-top: 1.2rem}
+           /* 没有给sousuolan设置具体高度是因为避免后面标签的边框属性破坏该限制，当然也可以使用height：auto */
+           #sousuolan{text-align: center;margin-top: 0.5rem;width: 100%;z-index: 3;height: 1.3rem;}
+           #input1{border:none;width: 5.5rem;height: 1.3rem;outline: none;text-indent: 0.2rem}
+           #input2{border: none;border-left: 1px solid rgb(195, 195, 197);background-color: #fff;height: 1rem;width: 2.2rem;font-size: 0.46rem;vertical-align: middle;outline: none}
+           #huodonglan{width: 100%;margin-top: 1rem;}
+           #xinwenye{width: 100%;margin-top: 1rem;line-height: 1.5rem}
+           #new1 a,#new1 a:visited{text-decoration: none;color: black}
+           #new1 {border-bottom: 1px solid rgb(214, 211, 211)}
+           p{text-indent: 1rem;}
+           #new2 a,#new2 a:visited{text-decoration: none;color: black}
+           #new2 {border-bottom: 1px solid rgb(214, 211, 211)}
+           #new3 a,#new3 a:visited{text-decoration: none;color: black}
+           #new3 {border-bottom: 1px solid rgb(214, 211, 211)}
+           #dibu{position: relative;bottom: 0.5rem;}
+           #dibu a,#dibu a:visited{text-decoration: none;color: black;font-size: 0.5rem;margin-left: 1.2rem}
+           .xinwenyeimg{width: 4rem;height: 4rem;}
+           
+
+           @media only screen and (min-width:1200px){
+              #input1{width: 8rem}
+              #input2{width:3.5rem;}
+              #xinwenye{text-align: center;line-height: 5rem}
+           }
+           @media only screen and (min-width:700px ){
+              #dibu{text-align: center}
+           } 
+
+           @media only screen and (max-width:300px){
+              .xinwenyeimg{width: 0.7rem;height: 1rem;}
+           } 
+        </style>
+
+    </head>
+    <body style="overflow: auto;">
+        <div id="content">
+            <div class="top">
+                <div id="navagation" name="手机端首页上端">
+                    <a href="#" id="png1"><img src="shoujibaidu/caidan.png"  alt="" style="width: 1.2rem;height: 1.2rem;"></a>
+                    <a href="#" id="png2"><img src="shoujibaidu/jinbiao.png" alt="" style="width: 1.5rem;height: 1.5rem;"></a>
+                    <a href="#" id="png3"><img src="shoujibaidu/caidan2.png" alt="" style="width: 1.2rem;height: 1.2rem;"></a>
+                </div>
+            </div>
+                <div id="tupianlan"> <img src="shoujibaidu/logo.png" alt="百度logo" id="logo" > </div>
+                <div id="sousuolan">
+                    <form action="#" id="froms" style="display:inline-block;border: 1px solid black;">
+                        <span style="width:0.2rem;height:100%"></span>
+                        <input type="search" id="input1"  maxlength="66"  autocomplete="off">
+                        <span><a href="#"><img src="shoujibaidu/maikefeng.png" alt="语音输入" style="width: 0.48rem;height: 0.8rem;vertical-align: middle;"></a></span>
+                        <span style="padding-left:0.25rem;"><a href="#"><img src="shoujibaidu/paizhao.png" alt="点击搜图" style="width: 0.8rem;height: 0.7rem;vertical-align: middle;"></a></span>
+                        <input type="submit" id=input2 title="百度一下" value="百度一下">
+                    </form>
+                </div>
+                <div id="huodonglan"><a href="#"><img src="shoujibaidu/huodongtupian.png" alt="端午活动" style="width: 100%;"><img src="shoujibaidu/guanbi.png" alt="关闭" style="    position: absolute;z-index: 100;right: 0.3rem;top: 9rem;width: 0.6rem;"></a></div>
+                <div id="xinwenye" >
+                    <div id="new1">
+                       <a href="http://news.cnr.cn/native/gd/20190615/t20190615_524651931.shtml" >
+                        <p style="font-size: 0.8rem">习近平同俄罗斯普京举行会谈</p>
+                        <p style="font-size: 0.5rem"><img src="shoujibaidu/fuhao.png" alt="置顶符号" style="width: 0.5rem;vertical-align: sub;"><span style="color: red">置顶</span>&nbsp;&nbsp;&nbsp;新华社</p> 
+                       </a>
+                    </div>
+                    <div id="new2">
+                        <a href="http://www.xinhuanet.com/world/2019-06/06/c_1124589505.htm" >
+                            <p style="font-size: 0.8rem">习近平在中俄建交纪念大会上的讲话</p>
+                            <p style="font-size: 0.5rem"><img src="shoujibaidu/fuhao.png" alt="置顶符号" style="width: 0.5rem;vertical-align: sub;"><span style="color: red">置顶</span>&nbsp;&nbsp;&nbsp;新华社</p> 
+                           </a>
+                    </div>
+                    <div id="new3">
+                        <a href="http://www.sohu.com/a/318481473_100090362" >
+                            <p style="font-size: 0.8rem">好消息来了！华为“鸿蒙系统”正式在欧洲亮相: 系统界面让网友心动 </p>
+                            <p><img src="shoujibaidu/hongmeng1.jpeg" alt="" class="xinwenyeimg" >&nbsp;<img src="shoujibaidu/hongmeng2.jpeg" alt="" class="xinwenyeimg" >&nbsp;<img src="shoujibaidu/hongmeng3.jpeg" alt=""  class="xinwenyeimg"></p>
+                            <p style="font-size: 0.4rem">逍遥说科技</p> 
+                        </a>
+                    </div>
+                    <div style="text-align: center;">
+                        <p><img src="shoujibaidu/shenglue.png" alt="" style="width: 1rem;vertical-align: super;"></p>
+                    </div>
+                    <div id="dibu">
+                        <a href="#">首页</a>
+                        <a href="#">好看视频</a>
+                        <a href="#">贴吧</a>
+                        <a href="#">小游戏</a>
+                        <a href="#">我的</a>
+                    </div>
+                
+            </div>
+        </div>
+    </body>
+    <script>
+    </script>
+</html>

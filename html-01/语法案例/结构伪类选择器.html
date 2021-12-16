@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+           div p:first-child{color:fuchsia;}
+           /* 选中父元素为div标签中第一个子元素且为p标签,改变其颜色 */
+           p:last-child{color: blue }
+
+           /* p:nth-child(n){属性： 值} 选择父元素中第n个子元素 */
+        </style>
+    </head>
+    <body>
+        <p>文字</p>
+        <div>
+            <!-- <a href="#"> 超链接 </a> -->
+            <p>文字1</p>
+            <p>文字2</p>
+            <p>文字3</p> 
+            <span>
+                文字4
+                <p>文字5</p>
+            </span>
+        </div>
+        <p>文字6</p>
+        <span>
+            <p>文字7</p>
+        </span>
+        <div>
+            文字8
+            <p>文字9</p>
+        </div>
+    </body>
+</html>
